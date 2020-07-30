@@ -58,7 +58,7 @@ public class SinglyLinkedList<E> {
 		int index = 0;
 		Node current = front;
 		while (current != null) {
-			if (current.data == value) {
+			if (current.data.equals(value)) {
 				return index;
 			}
 			index++;
