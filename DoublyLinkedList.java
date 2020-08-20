@@ -1,6 +1,5 @@
 // A doubly-linked list initialized with two dummy nodes (one front node, one back node and all
 // insertions occur between nodes).
-//
 
 public class DoublyLinkedList<E> {
 	
