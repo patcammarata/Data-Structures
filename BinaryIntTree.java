@@ -4,6 +4,11 @@
 // This binary tree stores ints and has a structure with an easily-definable pattern (root n, 
 // left 2n, right 2n+1)
 
+// Leaf Node -> Node with null left and right pointers
+// Branch Node -> Node with at least one non-null pointer
+// Depth -> Node's distance from the root node
+// Height -> Maximum depth of the binary tree - 1
+
 public class BinaryIntTree {
 
 	class IntTreeNode {
@@ -100,6 +105,44 @@ public class BinaryIntTree {
 			}
 			System.out.println(root.data);
 			printSideways(root.left, level + 1);
+		}
+	}
+	
+	public int sum() {
+		return sum(overallRoot);
+	}
+	
+	private int sum(IntTreeNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			return root.data + sum(root.left) + sum(root.right);
+		}
+	}
+	
+	public int maxDepth() {
+		return maxDepth(overallRoot);
+	}
+	
+	private int maxDepth(IntTreeNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+		}
+	}
+	
+	public int countLeaves() {
+		return countLeaves(overallRoot);
+	}
+	
+	private int countLeaves(IntTreeNode root) {
+		if (root == null) {
+			return 0;
+		} else if (root.left == null && root.right == null) {
+			return 1;
+		} else {
+			return countLeaves(root.left) + countLeaves(root.right);
 		}
 	}
 
