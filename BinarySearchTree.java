@@ -83,7 +83,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
 	
 	public void printSideways() {
 		System.out.println();
-		printSideways(overallRoot, 1);
+		printSideways(overallRoot, 0);
 	}
 	
 	private void printSideways(TreeNode<E> root, int level) {
